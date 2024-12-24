@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: roboto;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  max-width: 100%;
+  /* background-color: red; */
+  text-align: center;
+  position: relative;
+}
+
+.top{
+  display: flex;
+  gap: 8em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top::before{
+  content: "";
+  position: absolute;
+  background-color: var(--line-border-empty);
+  /* transform: translateY(-50%); */
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+  /* transition: 0.4s ease; */
+}
+
+
+.top .line{
+  position: absolute;
+  background-color: var(--line-border-fill);
+  /* transform: translateY(-50%); */
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.top .line .blue{
+  position: absolute;
+  background-color: red;
+  height: 4px;
+  width: 100%;
+  z-index: 2;
+}
+
+.circle{
+  background-color: white;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--line-border-empty) solid 3px;
+  transition: 0.4s ease;
+}
+
+.circle.active{
+  border-color: var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: white;
+  padding: 1em 3em;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  /* outline: none; */
+  margin: 1em;
+}
+
+.btn:active{
+  transform: scale(0.9);
+}
+
+/* .btn:focus{
+  outline: 0;
+} */
+
+.btn:disabled{
+  background-color: var(--line-border-empty);
+  color: black;
+  cursor: not-allowed;
+  pointer-events: none;
+}
